@@ -7,6 +7,11 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
 Plug 'kaicataldo/material.vim'
+Plug 'morhetz/gruvbox'
+Plug 'nanotech/jellybeans'
+
+" Nerd TREE
+Plug 'scrooloose/nerdtree'
 
 " Ruby vim plugin
 Plug 'vim-ruby/vim-ruby'
@@ -47,6 +52,9 @@ Plug 'tpope/vim-endwise'
 
 " Comments
 Plug 'scrooloose/nerdcommenter'
+
+" Closing html tags
+Plug 'alvan/vim-closetag'
 
 " Command runner
 Plug 'benmills/vimux'
@@ -94,10 +102,11 @@ hi ALEWarning ctermbg=94
 
 set number
 set relativenumber
-set t_Co=256
 set noswapfile
 set list listchars=tab:»·,trail:·,nbsp:·
-colorscheme material
+set background=dark
+" colorscheme material
+set termguicolors
 set statusline+=%F
 set hidden
 set smarttab
@@ -105,9 +114,9 @@ set shiftwidth=2
 set tabstop=2
 set expandtab
 set colorcolumn=80
-set termguicolors
 set hlsearch
 highlight ColorColumn ctermbg=0 guibg=#424242
+highlight LineNr guifg=#aaaaaa
 
 let mapleader = ' '
 " Find selected text in file.
@@ -122,6 +131,7 @@ nnoremap <Leader>gj :Files app/javascript/<CR>
 nnoremap <Leader>gv :Files app/views/<CR>
 nnoremap <Leader>gs :Files spec/<CR>
 nnoremap <Leader>gd :FZF<CR>
+nnoremap <Leader>gg :GFiles?<CR>
 " Finding in files
 nnoremap \ :Ag<SPACE>
 nnoremap <leader>k :exe 'Ag!' expand('<cword>')<cr>
@@ -133,12 +143,13 @@ let g:spec_runner_dispatcher = "VtrSendCommand! bundle exec {command}"
 nnoremap <Leader>s :call VimuxRunCommand("clear; be rspec " . bufname("%"))<CR>
 " Run rubocop for current file.
 nnoremap <Leader>l :call VimuxRunCommand("clear; rubocop " . bufname("%"))<CR>
+
 " Switch betwen two last files
 nnoremap <leader><leader> <C-^>
 " Switch to next buffer
 nnoremap <leader>n :bn<Enter>
 " Show all buffers
-nnoremap <leader>a :buffers<CR>:buffer<Space>
+nnoremap <leader>a :Buffers<CR>
 " Switch buffer number
 nnoremap <C-q> :Buffers<CR>
 
@@ -149,6 +160,9 @@ let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 
 " Search and replace
 vnoremap <F8> "xy :%s/<C-R>x/
+nmap <F7> :NERDTreeToggle<CR>
+nnoremap gb obinding.pry<esc>
+nnoremap gc oconsole.log(
 
 
 " Function to hide and show left tab.
