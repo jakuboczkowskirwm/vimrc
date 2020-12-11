@@ -2,13 +2,21 @@ execute pathogen#infect()
 
 call plug#begin('~/.vim/plugged')
 
+" snippets
+Plug 'honza/vim-snippets'
+
 " JS syntax
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
 Plug 'kaicataldo/material.vim'
 Plug 'morhetz/gruvbox'
-Plug 'nanotech/jellybeans'
+Plug 'franbach/miramare'
+
+Plug 'christoomey/vim-tmux-navigator'
+
+" JS coc
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Nerd TREE
 Plug 'scrooloose/nerdtree'
@@ -90,6 +98,8 @@ let g:ale_sign_warning = '-'
 
 let g:ale_set_highlights = 1
 
+let g:ale_fix_on_save = 1
+
 autocmd CursorHold * call ale#Queue(0)
 autocmd CursorHoldI * call ale#Queue(0)
 autocmd InsertLeave * call ale#Queue(0)
@@ -105,7 +115,7 @@ set relativenumber
 set noswapfile
 set list listchars=tab:»·,trail:·,nbsp:·
 set background=dark
-" colorscheme material
+colorscheme material
 set termguicolors
 set statusline+=%F
 set hidden
@@ -117,11 +127,13 @@ set colorcolumn=80
 set hlsearch
 highlight ColorColumn ctermbg=0 guibg=#424242
 highlight LineNr guifg=#aaaaaa
+set nosol
 
 let mapleader = ' '
 " Find selected text in file.
 vnoremap // y/<C-R>"<CR>
 nnoremap <Leader>f yiw/<C-R>"<CR>
+
 
 " Finding in folders
 nnoremap <Leader>ga :Files app/<CR>
@@ -136,6 +148,7 @@ nnoremap <Leader>gg :GFiles?<CR>
 nnoremap \ :Ag<SPACE>
 nnoremap <leader>k :exe 'Ag!' expand('<cword>')<cr>
 vnoremap <leader>j "zy :Ag <C-R>z<cr>
+nnoremap <leader>\ :vsplit<cr>
 
 let g:spec_runner_dispatcher = "VtrSendCommand! bundle exec {command}"
 
@@ -163,7 +176,6 @@ vnoremap <F8> "xy :%s/<C-R>x/
 nmap <F7> :NERDTreeToggle<CR>
 nnoremap gb obinding.pry<esc>
 nnoremap gc oconsole.log(
-
 
 " Function to hide and show left tab.
 function! HideTab()
