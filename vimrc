@@ -98,8 +98,6 @@ let g:ale_sign_warning = '-'
 
 let g:ale_set_highlights = 1
 
-let g:ale_fix_on_save = 1
-
 autocmd CursorHold * call ale#Queue(0)
 autocmd CursorHoldI * call ale#Queue(0)
 autocmd InsertLeave * call ale#Queue(0)
@@ -115,8 +113,7 @@ set relativenumber
 set noswapfile
 set list listchars=tab:»·,trail:·,nbsp:·
 set background=dark
-colorscheme material
-set termguicolors
+colorscheme gruvbox
 set statusline+=%F
 set hidden
 set smarttab
@@ -127,13 +124,11 @@ set colorcolumn=80
 set hlsearch
 highlight ColorColumn ctermbg=0 guibg=#424242
 highlight LineNr guifg=#aaaaaa
-set nosol
 
 let mapleader = ' '
 " Find selected text in file.
 vnoremap // y/<C-R>"<CR>
 nnoremap <Leader>f yiw/<C-R>"<CR>
-
 
 " Finding in folders
 nnoremap <Leader>ga :Files app/<CR>
@@ -188,6 +183,11 @@ function! ShowTab()
   set relativenumber
   set signcolumn=yes
 endfunction
+
+nnoremap <F2> :saveas %:p:h/
 nnoremap <F9> :call HideTab()<cr>
 nnoremap <F10> :call ShowTab()<cr>
 
+if (has("termguicolors"))
+  set termguicolors
+endif
