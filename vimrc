@@ -2,6 +2,18 @@ execute pathogen#infect()
 
 call plug#begin('~/.vim/plugged')
 
+"vim easymotion
+Plug 'easymotion/vim-easymotion'
+
+"ayu colorschema
+Plug 'ayu-theme/ayu-vim'
+
+"one colorschema
+Plug 'rakr/vim-one'
+
+" github colorschmea
+Plug 'endel/vim-github-colorscheme'
+
 " snippets
 Plug 'honza/vim-snippets'
 
@@ -113,7 +125,8 @@ set relativenumber
 set noswapfile
 set list listchars=tab:»·,trail:·,nbsp:·
 set background=dark
-colorscheme gruvbox
+colorscheme ayu
+" colorscheme one
 set statusline+=%F
 set hidden
 set smarttab
@@ -147,7 +160,6 @@ nnoremap <leader>\ :vsplit<cr>
 
 let g:spec_runner_dispatcher = "VtrSendCommand! bundle exec {command}"
 
-" Run rspec for current spec file.
 nnoremap <Leader>s :call VimuxRunCommand("clear; be rspec " . bufname("%"))<CR>
 " Run rubocop for current file.
 nnoremap <Leader>l :call VimuxRunCommand("clear; rubocop " . bufname("%"))<CR>
@@ -161,6 +173,13 @@ nnoremap <leader>a :Buffers<CR>
 " Switch buffer number
 nnoremap <C-q> :Buffers<CR>
 
+
+function! VimuxSlime()
+  call VimuxRunCommand(@v, 0)
+endfunction
+
+
+vmap <Leader>vs "vy :call VimuxSlime()<CR>
 " Diffrent currsors in diffrent mode.
 let &t_SI.="\e[5 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
@@ -168,9 +187,14 @@ let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 
 " Search and replace
 vnoremap <F8> "xy :%s/<C-R>x/
+" Toogle nerd tree
 nmap <F7> :NERDTreeToggle<CR>
+" Snippets
 nnoremap gb obinding.pry<esc>
 nnoremap gc oconsole.log(
+
+" let g:ale_sign_error = ''
+" let g:ale_sign_warning = ''
 
 " Function to hide and show left tab.
 function! HideTab()
