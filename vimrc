@@ -2,11 +2,8 @@ execute pathogen#infect()
 
 call plug#begin('~/.vim/plugged')
 
-"vim easymotion
-Plug 'easymotion/vim-easymotion'
-
-"ayu colorschema
-Plug 'ayu-theme/ayu-vim'
+" onedark colorschmea
+Plug 'joshdick/onedark.vim'
 
 "one colorschema
 Plug 'rakr/vim-one'
@@ -125,7 +122,7 @@ set relativenumber
 set noswapfile
 set list listchars=tab:»·,trail:·,nbsp:·
 set background=dark
-colorscheme ayu
+colorscheme onedark
 " colorscheme one
 set statusline+=%F
 set hidden
@@ -135,6 +132,7 @@ set tabstop=2
 set expandtab
 set colorcolumn=80
 set hlsearch
+set noesckeys
 highlight ColorColumn ctermbg=0 guibg=#424242
 highlight LineNr guifg=#aaaaaa
 
@@ -215,3 +213,9 @@ nnoremap <F10> :call ShowTab()<cr>
 if (has("termguicolors"))
   set termguicolors
 endif
+
+
+autocmd VimEnter * NERDTree | wincmd p
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
