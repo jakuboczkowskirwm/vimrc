@@ -59,3 +59,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     # If you want a specific version, use 'postgresql-12' or similar instead of 'postgresql':
     sudo apt-get -y install postgresql
 ```
+
+# ruby deps
+```
+    sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev libffi-dev postgresql-client-common postgresql-client libpq-dev
+```
