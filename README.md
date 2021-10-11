@@ -64,3 +64,16 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ```
     sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev libffi-dev postgresql-client-common postgresql-client libpq-dev
 ```
+
+
+# install nvm node and yarn
+
+```
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+    export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+    source ~/.bashrc
+    
+    nvm install node
+    rails  webpacker:install
+```
