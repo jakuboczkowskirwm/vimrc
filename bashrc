@@ -122,7 +122,7 @@ function parse_git_dirty {
 
 
 
-PS1="(\u@\H) \w \[\e[32m\]\`parse_git_branch\`\[\e[m\] \n$ "
+PS1="\e[0;33m (\u@\H)\e[m \w \[\e[32m\]\`parse_git_branch\`\[\e[m\] \n$ "
 export HISTCONTROL=ignoredups:erasedups
 shopt -s histappend
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
