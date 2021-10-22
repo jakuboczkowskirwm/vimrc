@@ -1,33 +1,33 @@
 # all what i need instaltaion guide
 
-# first install fzf
+# 1. first install fzf
 
 ```
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
 
-# install pathogen
+# 2. install pathogen
 
 ```
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 ```
 
-# install plug
+# 3. install plug
 
 ```
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-# install ag
+# 4. install ag
 
 ```
   sudo apt-get install silversearcher-ag && sudo apt-get install vim && sudo apt-get install tmux
 ```
 
-# install rbenv and ruby bild
+# 5. install rbenv and ruby bild
 
 ```bash
     git clone https://github.com/rbenv/rbenv.git ~/.rbenv
@@ -43,7 +43,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ```
 
 
-# install postgress
+# 6. install postgress
 
 ```bash
     # Create the file repository configuration:
@@ -60,13 +60,13 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     sudo apt-get -y install postgresql
 ```
 
-# ruby deps
+# 7. ruby deps
 ```
     sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev libffi-dev postgresql-client-common postgresql-client libpq-dev
 ```
 
 
-# install nvm node and yarn
+# 8. install nvm node and yarn
 
 ```
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
