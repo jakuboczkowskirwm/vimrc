@@ -1,0 +1,58 @@
+{
+  "workbench.colorTheme": "Monokai Pro (Filter Machine)",
+  "editor.rulers": [
+    120,
+  ],
+  "editor.minimap.enabled": false,
+  "files.autoSave": "afterDelay",
+  "editor.suggestSelection": "first",
+  "terminal.integrated.fontSize": 16,
+  "editor.fontFamily": "Monaco",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.mouseWheelZoom": true,
+  "editor.tabSize": 2,
+  "editor.fontSize": 16,
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-w>": false,
+    "<C-b>": false,
+  },
+  "window.zoomLevel": -1,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["actions.find"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["actions.find"]
+    }
+  ],
+  "editor.quickSuggestionsDelay": 0,
+  "ruby.intellisense": "rubyLocate",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.lineNumbers": "relative",
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.hg/store/**": true,
+    "**/tmp/**": true,
+    "**/vendor/**": true
+  }
+}
